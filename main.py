@@ -1,12 +1,26 @@
+# machine consumables
+water = 500
+milk = 300
+coffee = 50
+money = 5.00
+
 # TODO 1. Prompt user with choice of beverage
 # check users input for what to do next
 # prompt should show up once action is completed for next customer
 
+user_selection = input("Please select which beverage you want. espresso | latte | cappuccino : ")
+
 # TODO 2. Turn off coffee machine by typing 'Off'
 # should end execution of program
 
+if user_selection == 'off':
+    exit
+
 # TODO 3. Print report
 # show report of current consumables and money in machine
+
+elif user_selection == 'report':
+    print(f'Water: {water}\nMilk: {milk}\nCoffee: {coffee} g\nMoney: ${"{:.2f}".format(round(money, 2))}')
 
 # TODO 4. Check resources sufficient
 # give errors for which resources are insufficient
