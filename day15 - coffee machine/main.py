@@ -4,6 +4,13 @@ milk = 300
 coffee = 50
 money = 5.00
 
+# dictonary of items (item: [cost ($), water (mL), coffee (g), milk (mL)])
+drink_dictionary = {
+    'espresso': [1.50, 50, 18, 0], 
+    'latte': [2.50, 200, 24, 150], 
+    'cappuccino': [3.00, 250, 24, 100]
+    }
+
 # TODO 1. Prompt user with choice of beverage
 # check users input for what to do next
 # prompt should show up once action is completed for next customer
@@ -29,25 +36,6 @@ def resource_check(user_selection, water, milk, coffee):
     milk_check = milk
     coffee_check = coffee
 
-    if user_selection == 'espresso':
-        water_check -= 50
-        coffee_check -= 18
-        milk_check = milk
-        resource_readback()
-    elif user_selection == 'latte':
-        water_check -= 200
-        coffee_check -= 24
-        milk_check -= 150
-        resource_readback()
-    elif user_selection == 'cappuccino':
-        water_check -= 250
-        coffee_check -= 24
-        milk_check -= 100
-        resource_readback()
-    else:
-        print('Not a drink that can be made. Exiting to start.')
-        exit
-
     def resource_readback():
         if water_check < 0 or coffee_check < 0 or milk_check < 0:
             print('Triggered.')
@@ -56,12 +44,32 @@ def resource_check(user_selection, water, milk, coffee):
             print('No issue.')
             print(water_check, coffee_check, milk_check)
 
+    if user_selection == 'espresso':
+        water_check -= drink_dictionary['espresso'][1]
+        coffee_check -= drink_dictionary['espresso'][2]
+        milk_check = drink_dictionary['espresso'][3]
+        resource_readback()
+    elif user_selection == 'latte':
+        water_check -= drink_dictionary['latte'][1]
+        coffee_check -= drink_dictionary['latte'][2]
+        milk_check -= drink_dictionary['latte'][3]
+        resource_readback()
+    elif user_selection == 'cappuccino':
+        water_check -= drink_dictionary['cappuccino'][1]
+        coffee_check -= drink_dictionary['cappuccino'][2]
+        milk_check -= drink_dictionary['cappuccino'][3]
+        resource_readback()
+    else:
+        print('Not a drink that can be made. Exiting to start.')
+        exit
+
 resource_check(user_selection, water, milk, coffee)
 
 # TODO 5. Process coins
 # prompt user to insert coins if sufficient consumables
 # ask user for how many they put in for coins
 # calculate the amount of coins put in
+
 
 # TODO 6. Check transaction successful
 # check if money inserted enough, if not refund amount and error message
