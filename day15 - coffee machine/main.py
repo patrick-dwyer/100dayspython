@@ -135,9 +135,3 @@ def user_start_prompt():
         main_logic(user_selection, machine_resources['water'], machine_resources['coffee'], machine_resources['milk'], machine_resources['money'])
 
 user_start_prompt()
-        
-
-
-
-
-
