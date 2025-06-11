@@ -40,3 +40,6 @@ while i != 1:
 
 screen.exitonclick()
 
+#turtle challenge 6: spirograph
+
+
