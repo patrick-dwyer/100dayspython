@@ -30,16 +30,20 @@ screen.colormode(255)
 #challenge 5: random walk
 i = 0
 timmy.width(10)
-timmy.speed(6)
-while i != 1:
-    angles = [0, 90, 180, 270]
-    timmy.rt(choice(angles))
-    timmy.color(randrange(0,255), randrange(0,255), randrange(0,255))
-    timmy.fd(100)
-    print(choice(angles))
+timmy.speed(10.2)
+# while i != 1:
+#     angles = [0, 90, 180, 270]
+#     timmy.rt(choice(angles))
+#     timmy.color(randrange(0,255), randrange(0,255), randrange(0,255))
+#     timmy.fd(100)
+#     print(choice(angles))
 
-screen.exitonclick()
+# screen.exitonclick()
 
 #turtle challenge 6: spirograph
+while i != 1:
+    timmy.color(randrange(0,255), randrange(0,255), randrange(0,255))
+    timmy.circle(150)
+    timmy.rt(50)
 
-
+screen.exitonclick()
