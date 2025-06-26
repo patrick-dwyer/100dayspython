@@ -11,10 +11,11 @@ def move_backwards():
 
 def move_left():
     tim.left(15)
-
+    tim.forward(10)
 
 def move_right():
     tim.right(15)
+    tim.forward(10)
 
 def clear_center():
     tim.reset()
@@ -23,8 +24,8 @@ screen.listen()
 screen.onkey(key="space", fun=move_forwards)
 screen.onkey(key="w", fun=move_forwards)
 screen.onkey(key="s", fun=move_backwards)
-screen.onkey(key="a", fun=move_left)
-screen.onkey(key="d", fun=move_right)
+screen.onkey(key="a", fun=rotate_left)
+screen.onkey(key="d", fun=rotate_right)
 screen.onkey(key="c", fun=clear_center)
 
 screen.exitonclick()
