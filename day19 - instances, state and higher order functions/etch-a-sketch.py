@@ -11,11 +11,10 @@ def move_backwards():
 
 def move_left():
     tim.left(15)
-    tim.forward(10)
+
 
 def move_right():
     tim.right(15)
-    tim.forward(10)
 
 def clear_center():
     tim.reset()
